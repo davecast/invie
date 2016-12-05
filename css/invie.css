@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 /** {
   width: tamaño;
   height: tamaño;
@@ -54,7 +57,7 @@ input:focus, textarea:focus {
 }
 
 .contenedor {
-  width: 800px;
+  max-width: 800px;
   margin: auto;
   position: relative;
 }
@@ -80,7 +83,9 @@ input:focus, textarea:focus {
   background: -webkit-linear-gradient(top,  rgba(243,197,189,1) 0%,rgba(232,108,87,1) 50%,rgba(234,40,3,1) 51%,rgba(255,102,0,1) 75%,rgba(199,34,0,1) 100%);
   background: linear-gradient(to bottom,  rgba(243,197,189,1) 0%,rgba(232,108,87,1) 50%,rgba(234,40,3,1) 51%,rgba(255,102,0,1) 75%,rgba(199,34,0,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3c5bd', endColorstr='#c72200',GradientType=0 ); */
-
+}
+.button.margin-top {
+  margin-top: 15px;
 }
 
 .titulo {
@@ -246,20 +251,16 @@ input:focus, textarea:focus {
 }
 
 
-.col1, .col2 {
+.col{
   display: flex;
   flex-direction: column;
+  padding: 0px 15px;
 }
-
-.col1 {
-  margin-right: 15px;
+.col.col-half {
+  width: 50%;
 }
-.col2 {
+.fx-start {
   align-items: flex-start;
-}
-
-.col2 .button {
-  margin-top: 15px;
 }
 
 .intereses label {
@@ -282,5 +283,128 @@ input:focus, textarea:focus {
 
 
 @media screen and (max-width: 800px) {
+  /*portada*/
+  .titulo {
+    margin-top: 30px;
+    font-size: 45px;
+  }
+  .title-a {
+    font-size: 18px;
+  }
+  .portada {
+    height: auto;
+  }
+  .portadad .button {
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+  /*portada*/
   
+  /*guitarras*/
+  .guitarras {
+    text-align: center;
+  }
+  .title-b {
+    margin: 0;
+  }
+  .derecha, .izquierda {
+    float: none;
+    width: 250px;
+    position: static;
+  }
+  .contenedor-guitarra-a, .contenedor-guitarra-b {
+    margin: 0;
+    padding: 0;
+    position: static;
+  }
+  .guitarra.b {
+    height: auto;
+  }
+  .guitarra ol {
+    list-style: none;
+  }
+  /*guitarras*/
+}
+
+@media screen and (max-width: 767px) {
+  .footer .contenedor {
+    display:block;
+  }
+  .contacto {
+    margin: 0 auto;
+  }
+  .formulario {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+  }
+  .formulario .col-half {
+    width: 100%;
+  }
+  .formulario .col {
+    padding: 0;
+  }
+  .intereses label {
+    display: block;
+    font-size: 16px;
+  }
+  input[type="text"], input[type="email"] {
+    font-size: 16px;
+    padding: 0;
+  }
+  input[type="radio"], input[type="checkbox"] {
+    zoom: 1.5;
+  }
+  textarea {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header {
+    text-align: center;
+  }
+  .logotipo {
+    margin: 0;
+  }
+  .menu {
+    position: static;
+    display: block;
+  }
+  .menu li:first-child {
+    margin: 0;
+  }
+  .menu ul {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .menu li {
+    margin: 0;
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid white;
+  }
+  .menu li:first-child {
+    border-top: 1px solid white;
+  }
+  .menu a::before {
+    display: none;
+  }
+  .portada {
+    text-align: center;
+  }
+  .titulo {
+    font-size: 30px;
+  }
+  .title-a {
+    font-size: 16px;
+  }
+  .derecha , .izquierda {
+    width: 150px;
+  }
+  .title-b {
+    font-size: 30px;
+  }
 }
